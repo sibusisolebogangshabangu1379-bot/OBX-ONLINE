@@ -2,94 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OBX-ONLINE | Shop Sneakers, Tech & Home - Delivered All Over SA</title>
-<meta name="description" content="OBX-ONLINE - Buy sneakers, hoodies, airfryers, earphones and more. Pay via EFT. Delivered All Over SA with PAXI. Based in Kwaggafontein, Mpumalanga.">
-<meta name="keywords" content="OBX ONLINE, buy sneakers online SA, airfryer South Africa, online shopping Kwaggafontein, EFT online shop">
-<meta property="og:title" content="OBX-ONLINE - Everything You Need">
-<meta property="og:description" content="Shop online, pay via EFT, delivered anywhere in SA with PAXI">
-<meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OBX-ONLINE | Shop Sneakers, Tech & Home in SA</title>
+<meta name="description" content="OBX-ONLINE - Shop sneakers, hoodies, earphones, airfryers in South Africa. Order on WhatsApp.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial}
-body{background:#f1f1f1}
-header{background:#000;color:#fff;padding:18px;text-align:center;position:sticky;top:0;z-index:99}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f1f1f1;font-family:Arial,sans-serif}
+header{background:#000;color:#fff;padding:14px;text-align:center}
 header h1{font-size:22px;letter-spacing:1px}
 header p{font-size:12px;color:#ccc;margin-top:4px}
-.topbar{display:flex;gap:8px;padding:12px;justify-content:center;flex-wrap:wrap;background:#fff}
-.topbar input{flex:1;min-width:180px;padding:11px;border-radius:20px;border:1px solid #ddd}
-.topbar button{padding:11px 14px;border-radius:20px;border:1px solid #000;background:#fff}
-.cats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:10px}
-.cats button{padding:8px 16px;border-radius:20px;border:1px solid #000;background:#fff}
+.topbar{display:flex;gap:8px;padding:12px;background:#fff;position:sticky;top:0;z-index:10}
+.topbar input{flex:1;min-width:120px;padding:10px;border:1px solid #ddd;border-radius:20px}
+.topbar button{padding:10px 14px;border:none;border-radius:20px;background:#000;color:#fff;font-weight:bold}
+.cats{display:flex;gap:8px;overflow:auto;padding:10px 12px;background:#fff}
+.cats button{white-space:nowrap;padding:8px 14px;border:1px solid #ddd;border-radius:20px;background:#fff}
 .cats button.active{background:#000;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:12px;max-width:950px;margin:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
 .card{background:#fff;border-radius:12px;overflow:hidden;padding-bottom:10px}
-.card img{width:100%;height:150px;object-fit:cover}
-.card h3{font-size:14px;padding:8px 10px 0}
-.card p{font-size:12px;color:#666;padding:3px 10px}
-.card .price{font-size:16px;color:#000;font-weight:bold}
-.card button{width:90%;margin:8px 5%;padding:10px;background:#000;color:#fff;border:none;border-radius:8px}
-.cart{background:#fff;padding:15px;border-radius:12px;max-width:950px;margin:12px auto}
-.cart h2{font-size:18px}
-.cart-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee;font-size:14px}
-.qty button{padding:2px 8px;margin:0 3px}
-.remove{color:red;border:none;background:none}
-.checkout{width:100%;padding:14px;background:#25D366;color:#fff;font-weight:bold;border:none;border-radius:10px;margin-top:10px;font-size:16px}
-input.field{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:8px}
-.info{background:#fff3cd;padding:14px;border-radius:12px;max-width:950px;margin:12px auto;font-size:13px;line-height:1.6}
-footer{text-align:center;padding:20px;font-size:12px;color:#888}
+.card img{width:100%;height:150px;object-fit:cover;background:#eee}
+.card h3{font-size:14px;padding:8px 8px 2px}
+.card p{font-size:12px;color:#666;padding:0 8px}
+.price{font-size:16px;font-weight:bold;padding:6px 8px}
+.card button{margin:0 8px;width:calc(100% - 16px);padding:9px;background:#25D366;border:none;border-radius:8px;font-weight:bold}
+.cart{background:#fff;margin:12px;padding:14px;border-radius:12px}
+.cart h2{font-size:18px;margin-bottom:8px}
+.cart-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;font-size:14px}
+.checkout{margin-top:12px;width:100%;padding:12px;background:#000;color:#fff;border:none;border-radius:10px;font-weight:bold;font-size:16px}
+footer{text-align:center;padding:20px;font-size:12px;color:#777}
 </style>
 </head>
 <body>
-<header>
-<h1>OBX-ONLINE</h1>
-<p>Everything You Need | Delivered All Over SA | Pay via EFT</p>
-</header>
-<div class="topbar">
-<input id="search" placeholder="Search sneakers, airfryer..." onkeyup="render()">
-<button onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
-</div>
-<div class="cats">
-<button class="active" onclick="setCat('all',this)">All</button>
-<button onclick="setCat('fashion',this)">Fashion</button>
-<button onclick="setCat('tech',this)">Tech</button>
-<button onclick="setCat('home',this)">Home</button>
-</div>
+<header><h1>OBX-ONLINE</h1><p>Sneakers • Fashion • Tech • Home - Delivered in SA</p></header>
+<div class="topbar"><input id="search" placeholder="Search sneakers, airfryer..." oninput="render()"><button onclick="render()">Search</button></div>
+<div class="cats" id="cats"></div>
 <div class="grid" id="grid"></div>
-<div class="cart" id="cartSection">
-<h2>Your Cart</h2>
-<div id="cartList">Cart is empty</div>
-<p id="total" style="font-weight:bold;margin-top:10px;">Total: R0</p>
-<p style="font-size:12px;color:#666">Delivery: PAXI via PEP R80 | Pickup in Kwaggafontein FREE</p>
-<input class="field" id="custName" placeholder="Your Name e.g. Thabo">
-<input class="field" id="custTown" placeholder="Your Town e.g. Siyabuswa">
-<input class="field" id="custPhone" placeholder="Your Phone e.g. 071...">
-<button class="checkout" onclick="checkout()">Checkout on WhatsApp + EFT</button>
-</div>
-<div class="info">
-<b>HOW EFT ORDER WORKS:</b><br>
-1. Add to cart<br>
-2. Fill name + town<br>
-3. Checkout opens WhatsApp<br>
-4. We reply with EFT details<br>
-5. You pay, send proof, we ship with PAXI 2-4 days + tracking
-</div>
-<footer>OBX-ONLINE | Kwaggafontein, Mpumalanga | All Over SA</footer>
+<div class="cart"><h2>🛒 Cart (<span id="count">0</span>)</h2><div id="cartList"><p>Cart is empty</p></div><p id="total" style="font-weight:bold;margin-top:8px"></p><button class="checkout" onclick="checkout()">Checkout on WhatsApp</button><p style="font-size:12px;color:#666;margin-top:8px;text-align:center">Orders go to WhatsApp - Pay on delivery / EFT</p></div>
+<footer>OBX-ONLINE • Kwaggafontein, Mpumalanga • WhatsApp Orders</footer>
 <script>
-const MY_WHATSAPP = "277XXXXXXXXX";
-const products = [
-{id:1, name:"White Airforce Sneakers", cat:"fashion", price:580, img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
-{id:2, name:"Black Hoodie", cat:"fashion", price:450, img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"},
-{id:3, name:"Grey Tracksuit", cat:"fashion", price:650, img:"https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=500"},
-{id:4, name:"Black Cap", cat:"fashion", price:180, img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500"},
-{id:5, name:"Wireless Earphones", cat:"tech", price:280, img:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500"},
-{id:6, name:"Smart Watch", cat:"tech", price:550, img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"},
-{id:7, name:"Fast Charger + Cable", cat:"tech", price:220, img:"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500"},
-{id:8, name:"Bluetooth Speaker", cat:"tech", price:350, img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"},
-{id:9, name:"Airfryer 5L", cat:"home", price:1250, img:"https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500"},
-{id:10, name:"Electric Kettle", cat:"home", price:380, img:"https://images.unsplash.com/photo-1594213114663-d94db9b17125?w=500"},
-{id:11, name:"Bedding Set Double", cat:"home", price:480, img:"https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500"},
-{id:12, name:"2 Plate Stove", cat:"home", price:620, img:"https://images.unsplash.com/photo-1556911220-bff31c812dba?w=500"},
+const products=[
+{name:"White Airforce Sneakers",cat:"Fashion",price:899,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"},
+{name:"Black Running Sneakers",cat:"Fashion",price:749,img:"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600"},
+{name:"Oversized Hoodie",cat:"Fashion",price:449,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600"},
+{name:"Denim Jacket",cat:"Fashion",price:599,img:"https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600"},
+{name:"Wireless Earphones",cat:"Tech",price:299,img:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600"},
+{name:"Smart Watch",cat:"Tech",price:699,img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"},
+{name:"Bluetooth Speaker",cat:"Tech",price:349,img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600"},
+{name:"Power Bank 20000mAh",cat:"Tech",price:399,img:"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600"},
+{name:"Airfryer 5L",cat:"Home",price:1299,img:"https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600"},
+{name:"Electric Kettle",cat:"Home",price:349,img:"https://images.unsplash.com/photo-1594213114663-d94db9b17125?w=600"},
+{name:"Bedding Set",cat:"Home",price:499,img:"https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600"},
+{name:"LED Ring Light",cat:"Home",price:249,img:"https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600"}
 ];
-let cart = JSON.parse(localStorage.getItem('obx_cart') || '[]');
-let currentCat = 'all';
-function setCat(c, btn){ currentCat=c; document.querySelectorAll('.cats button').for
+let filter='All'; let cart=[];
+const cats=['All','Fashion','Tech','Home'];
+document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${c===filter?'active':''}" onclick="setFilter('${c}')">${c}</button>`).join('');
+function setFilter(c){filter=c; document.getElementById('cats').innerHTML=cats.map(x=>`<button class="${x===filter?'active':''}" onclick="setFilter('${x}')">${x}</button>`).join(''); render();}
+function render(){
+const q=document.getElementById('search').value.toLowerCase();
+const filtered=products.filter(p=>(p.cat===filter||filter==='All')&&(p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)));
+document.getElementById('grid').innerHTML=filtered.map((p,i)=>`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><p>${p.cat}</p><div class="price">R${p.price}</div><button onclick="add(${products.indexOf(p)})">Add to Cart</button></div>`).join('') || '<p style="padding:20px">No products found</p>';
+}
+function add(i){cart.push(products[i]); updateCart();}
+function updateCart(){
+document.getElementById('count').innerText=cart.length;
+let total=cart.reduce((s,p)=>s+p.price,0);
+document.getElementById('cartList').innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><span>${p.name}</span><b>R${p.price}</b></div>`).join(''):'<p>Cart is empty</p>';
+document.getElementById('total').innerText=cart.length?'Total: R'+total:'';
+}
+function checkout(){
+if(!cart.length){alert('Cart is empty');return;}
+let msg='Hi OBX-ONLINE! I want to order:%0A'+cart.map(p=>'- '+p.name+' R'+p.price).join('%0A')+'%0A Total: R'+cart.reduce((s,p)=>s+p.price,0);
+window.open('https://wa.me/277XXXXXXXXX?text='+msg,'_blank');
+}
+render();
+</script>
+</body>
+</html>
